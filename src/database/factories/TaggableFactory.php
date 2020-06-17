@@ -2,11 +2,11 @@
 
 /** @var \Illuminate\Database\Eloquent\Factory $factory */
 
-use App\tags;
+use App\Taggable;
 use Faker\Generator as Faker;
 
-$factory->define(tags::class, function (Faker $faker) {
+$factory->define(Taggable::class, function (Faker $faker) {
     return [
-        //
+        'name' => $faker->name
     ];
 });
