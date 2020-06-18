@@ -8,4 +8,3 @@ $factory->define(Post::class, function (Faker $faker) {
       'name' => $faker->name
     ];
 });
-
