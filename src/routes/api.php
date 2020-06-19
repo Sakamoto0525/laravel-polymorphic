@@ -25,5 +25,7 @@ Route::middleware(['cors'])->group(function () {
     Route::resource('posts', 'PostController');
     Route::post('posts/store_sync', 'PostController@store_sync');
 
+    Route::resource('tags', 'TagController');
+
     Route::resource('taggables', 'TaggableController');
 });

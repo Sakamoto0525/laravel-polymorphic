@@ -11,7 +11,12 @@ class Tag extends Model
      */
     public function posts()
     {
-        return $this->morphedByMany('App\Post', 'taggable');
+        return $this->morphedByMany('App\Post', 'taggable')
+                    ->using('App\Taggable')
+                    ->withPivot([
+                        'id',
+                        'value'
+                    ]);
     }
 
     /**
@@ -19,6 +24,11 @@ class Tag extends Model
      */
     public function videos()
     {
-        return $this->morphedByMany('App\Video', 'taggable');
-    }
+        return $this->morphedByMany('App\Video', 'taggable')
+                    ->using('App\Taggable')
+                    ->withPivot([
+                        'id',
+                        'value'
+                    ]);
+                }
 }
