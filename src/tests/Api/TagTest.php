@@ -81,4 +81,18 @@ final class TagTest extends TestCase
         // ;
         $response->dump(); // テスト用
     }
+
+    //****************************************
+    //  Store
+    //****************************************
+
+    /** @test */
+    public function store(): void
+    {
+      $params = [
+        'name' => 'さかもと'
+      ];
+      $response = $this->json('POST', '/api/tags', $params);
+      $response->dump();
+    }
 }

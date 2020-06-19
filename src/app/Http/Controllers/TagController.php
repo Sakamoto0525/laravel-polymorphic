@@ -32,4 +32,14 @@ class TagController extends Controller
 
         return response()->json($tag, 200);
     }
+
+    public function store(Request $request)
+    {
+        // 普通にnew → save
+        $tag = new Tag();
+        $tag->name = $request->name;
+        $tag->save();
+
+        return response()->json($tag, 201);
+    }
 }
